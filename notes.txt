@@ -4,7 +4,53 @@
 
   LOOK-UP:
     - Actions and Reducers
+
+    Actions:
+      Actions are payloads of information that send data from your application to your store. They are the only source of information for the store. You send them to the store using store.dispatch().
+
+      Actions are plain JavaScript objects. Actions must have a type property that indicates the type of action being performed. Types should typically be defined as string constants. Once your app is large enough, you may want to move them into a separate module.
+
+      ref: http://devdocs.io/redux/basics/actions
+
+    Reducers:
+      Actions describe the fact that something happened, but don't specify how the application's state changes in response. This is the job of a reducer.
+
+      ref: http://devdocs.io/redux/basics/reducers
+
     - export default function
+
+      export default:
+        If we want to export a single value or to have a fallback value for our module, we could use a default export:
+
+        ref: http://devdocs.io/javascript/statements/export
+
     - switch and case
+
+      switch:
+        The switch statement evaluates an expression, matching the expression's value to a case clause, and executes statements associated with that case.
+
+        ref: http://devdocs.io/javascript/statements/switch
+
     - undefined
+
+      undefined:
+        The global undefined property represents the primitive value undefined. It is one of JavaScript's primitive types.
+
+        undefined is a property of the global object, i.e. it is a variable in global scope. The initial value of undefined is the primitive value undefined.
+
+        In modern browsers (JavaScript 1.8.5 / Firefox 4+), undefined is a non-configurable, non-writable property per the ECMAScript 5 specification. Even when this is not the case, avoid overriding it.
+
+        A variable that has not been assigned a value is of type undefined. A method or statement also returns undefined if the variable that is being evaluated does not have an assigned value. A function returns undefined if a value was not returned.
+
+        ref: http://devdocs.io/javascript/global_objects/undefined
+
     - const
+
+      const:
+        Constants are block-scoped, much like variables defined using the let statement. The value of a constant cannot change through re-assignment, and it can't be redeclared.
+
+        This declaration creates a constant that can be either global or local to the function in which it is declared. An initializer for a constant is required; that is, you must specify its value in the same statement in which it's declared (which makes sense, given that it can't be changed later).
+
+        The const declaration creates a read-only reference to a value. It does not mean the value it holds is immutable, just that the variable identifier cannot be reassigned. For instance, in case the content is an object, this means the object itself can still be altered.
+
+        ref: http://devdocs.io/javascript/statements/const
