@@ -1,0 +1,10 @@
+=TUTORIAL NOTES=
+
+18/Nov/2016
+
+  LOOK-UP:
+    - Actions and Reducers
+    - export default function
+    - switch and case
+    - undefined
+    - const
