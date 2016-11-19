@@ -60,10 +60,90 @@
 
   LOOK-UP:
     - Redux store
-    - fromJS
-    - Git push.default 'matching' vs 'simple'
+
+      Store:
+        A store holds the whole state tree of your application.
+
+        The only way to change the state inside it is to dispatch an action on it.
+
+        A store is not a class. It's just an object with a few methods on it.
+
+        To create it, pass your root reducing function to createStore.
+
+        ref: http://devdocs.io/redux/api/store
+
+
+    - dispatch(action)
+
+      dispatch(action):
+        Dispatches an action. This is the only way to trigger a state change.
+
+        The store's reducing function will be called with the current getState() result and the given action synchronously. Its return value will be considered the next state. It will be returned from getState() from now on, and the change listeners will immediately be notified.
+
+        ref: http://devdocs.io/redux/api/store#dispatch
+
+
+    - fromJS (immutable-js):
+        Deeply converts plain JS objects and arrays to Immutable Maps and Lists.
+
+        ref: https://facebook.github.io/immutable-js/docs/#/fromJS
+
+
+    - Git push.default
+
+      git push origin:
+        Without additional configuration, pushes the current branch to the configured upstream (remote.origin.merge configuration variable) if it has the same name as the current branch, and errors out without pushing otherwise.
+
+        The default behavior of this command when no <refspec> is given can be configured by setting the push option of the remote, or the push.default configuration variable.
+
+        For example, to default to pushing only the current branch to origin use git config remote.origin.push HEAD. Any valid <refspec> (like the ones in the examples below) can be configured as the default for git push origin.
+
+        ref: http://devdocs.io/git/git-push
+
+
     - socket.io
       - 'Server' from socket.io
+          
+        Server():
+          Creates a new Server. Works with and without new.
+
+          ref: http://devdocs.io/socketio/server-api#server
+
+
+        Server#attach:
+          Server#attach(port:Number, opts:Object):Server
+
+          Attaches the Server to an engine.io instance that is bound to port with the given opts (optionally).
+
+          ref: http://devdocs.io/socketio/server-api#server-attach-srv-http-server-opts-object-server
+
+
       - babel-node (from babel-cli package)
+
+        babel-node:
+          Not meant for production use
+          
+          You should not be using babel-node in production. It is unnecessarily heavy, with high memory usage due to the cache being stored in memory. You will also always experience a startup performance penalty as the entire app needs to be compiled on the fly.
+
+          Check out the example Node.js server with Babel for an idea of how to use Babel in a production deployment.
+
+          ref: https://babeljs.io/docs/usage/cli/
+
       - WebSockets
+
+        Websocket:
+          This is an experimental technology
+          
+          Because this technology's specification has not stabilized, check the compatibility table for usage in various browsers. Also note that the syntax and behavior of an experimental technology is subject to change in future versions of browsers as the specification changes.
+
+          The WebSocket object provides the API for creating and managing a WebSocket connection to a server, as well as for sending and receiving data on the connection.
+
+          ref: http://devdocs.io/dom/websocket
+
+
       - fallback mechanisms
+
+        'Fallback mechanism':
+          Socket.io has fallback mechanisms for clients that don't support WebSockets.
+
+          ref: http://blog.caplin.com/2010/03/02/why-we-dont-need-html5-websocket/
