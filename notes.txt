@@ -61,3 +61,4 @@
   LOOK-UP:
     - Redux store
     - fromJS
+    - Git push.default 'matching' vs 'simple'
