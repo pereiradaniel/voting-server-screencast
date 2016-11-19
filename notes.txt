@@ -63,3 +63,7 @@
     - fromJS
     - Git push.default 'matching' vs 'simple'
     - socket.io
+      - 'Server' from socket.io
+      - babel-node (from babel-cli package)
+      - WebSockets
+      - fallback mechanisms
