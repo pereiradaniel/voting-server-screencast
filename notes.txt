@@ -151,11 +151,14 @@
 
 21/Nov/2016
 
-  - Emitting a Socket.io event
-    http://socket.io/docs/server-api/#server#emit
+  - Emitting a Socket.io event (io.emit, io.on)
+    ref: http://socket.io/docs/server-api/#server#emit
 
   - Subscribe to Redux store
 
   - Listening for connections on Socket.io
 
   - .toJS()
+
+  - Event Bus Bridge
+    ref: http://vertx.io/docs/vertx-web/java/#_securing_the_bridge
