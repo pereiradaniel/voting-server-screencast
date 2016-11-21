@@ -147,3 +147,15 @@
           Socket.io has fallback mechanisms for clients that don't support WebSockets.
 
           ref: http://blog.caplin.com/2010/03/02/why-we-dont-need-html5-websocket/
+
+
+21/Nov/2016
+
+  - Emitting a Socket.io event
+    http://socket.io/docs/server-api/#server#emit
+
+  - Subscribe to Redux store
+
+  - Listening for connections on Socket.io
+
+  - .toJS()
