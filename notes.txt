@@ -154,11 +154,66 @@
   - Emitting a Socket.io event (io.emit, io.on)
     ref: http://socket.io/docs/server-api/#server#emit
 
+    Server#emit:
+    Emits an event to all connected clients.
+
   - Subscribe to Redux store
 
-  - Listening for connections on Socket.io
+    subscribe(listener)
+
+    Adds a change listener. It will be called any time an action is dispatched, and some part of the state tree may potentially have changed. You may then call getState() to read the current state tree inside the callback.
+
+    Arguments
+
+    listener (Function): The callback to be invoked any time an action has been dispatched, and the state tree might have changed. You may call getState() inside this callback to read the current state tree. It is reasonable to expect that the store's reducer is a pure function, so you may compare references to some deep path in the state tree to learn whether its value has changed.
+
+    ref: http://devdocs.io/redux/api/store#subscribe
+
 
   - .toJS()
 
+    Converts back to raw Javascript objects.
+
+    All immutable Iterables can be converted to plain JavaScript Arrays and Objects shallowly with toArray() and toObject() or deeply with toJS(). All Immutable Iterables also implement toJSON() allowing them to be passed to JSON.stringify directly.
+
+    var deep = Immutable.Map({ a: 1, b: 2, c: Immutable.List.of(3, 4, 5) });
+    deep.toObject() // { a: 1, b: 2, c: List [ 3, 4, 5 ] }
+    deep.toArray() // [ 1, 2, List [ 3, 4, 5 ] ]
+    deep.toJS() // { a: 1, b: 2, c: [ 3, 4, 5 ] }
+    JSON.stringify(deep) // '{"a":1,"b":2,"c":[3,4,5]}'
+
+    ref: https://facebook.github.io/immutable-js/
+
+
+    Immutable-to-js 
+
+    Convert immutable-js value to regular js value
+    Function to convert an immutable-js value to a regular JavaScript value. If the given value is not an immutable-js value, it is simply returned.
+
+    Example
+    var toJS = require("immutable-to-js");
+    var Immutable = require("immutable");
+     
+    toJS(Immutable.Map({ foo: 1 })); // -> { foo: 1 } 
+    toJS(Immutable.fromJS([1, 2, 3])); // -> [1, 2, 3] 
+    toJS("hello"); // -> "hello" 
+    toJS(5); // -> 5 
+
+    ref: https://www.npmjs.com/package/immutable-to-js
+
+
   - Event Bus Bridge
+
+    For most applications you probably don’t want client side JavaScript being able to send just any message to any handlers on the server side or to all other browsers.
+
+    For example, you may have a service on the event bus which allows data to be accessed or deleted. We don’t want badly behaved or malicious clients being able to delete all the data in your database!
+
+    Also, we don’t necessarily want any client to be able to listen in on any event bus address.
+
+    To deal with this, a SockJS bridge will by default refuse to let through any messages. It’s up to you to tell the bridge what messages are ok for it to pass through. (There is an exception for reply messages which are always allowed through).
+
+    In other words the bridge acts like a kind of firewall which has a default deny-all policy.
+
+    Configuring the bridge to tell it what messages it should pass through is easy.
+
     ref: http://vertx.io/docs/vertx-web/java/#_securing_the_bridge
