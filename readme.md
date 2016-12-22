@@ -1,5 +1,8 @@
 # TUTORIAL NOTES
 
+> View the [screencast][screencastLink] for this tutorial.
+> Visit my web development blog [web development blog][bloglink].
+
 # 18/Nov/2016
 
 - Actions:
@@ -211,3 +214,6 @@
     Configuring the bridge to tell it what messages it should pass through is easy.
 
     > ref: http://vertx.io/docs/vertx-web/java/#_securing_the_bridge
+
+[screencastLink]: <https://www.youtube.com/watch?v=SZ4-rHL0cl0&list=PLX-RIZuCBJBJLDb3ilr7GVTUWEY-7qDw7>
+[bloglink]: <https://medium.com/@pereirawebdev>
