@@ -17,13 +17,21 @@ function getWinners(vote) {
 }
 
 export function next(state) {
-  const entries = state.get('entries')
-                       .concat(getWinners(state.get('vote')));
+  const entries = state.get('entries').concat(getWinners(state.get('vote')));
   if (entries.size === 1) {
+    // FOR DEBUGGING:
+    //    Indicate through the console which state decision is being made
+    //    Related to problem with winner not being declared unless client is refreshed on last vote
+      console.log('DECLARE WINNER');
+
     return state.remove('vote')
                 .remove('entries')
                 .set('winner', entries.first());
   } else {
+    // FOR DEBUGGING:
+    //    Indicate through the console which state decision is being made
+    //    Related to problem with winner not being declared unless client is refreshed on last vote
+      console.log('NO WINNER');
     return state.merge({
       vote: Map({pair: entries.take(2)}),
       entries: entries.skip(2)
